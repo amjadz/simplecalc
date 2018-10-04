@@ -9,10 +9,28 @@
 import Foundation
 
 public class Calculator {
+    
     public func calculate(_ args: [String]) -> Int {
         var allNums = args[args.count - 1]
         
+}
+
+func remainderCalc(_ nums: [String]) -> Int {
+        <#function body#>
+}
+    
+func factorialCalc(_ nums: [String]) -> Int  {
+    if nums.count == 2 {
+        var theEnd = Int(nums[0])
+        var answer = 1;
+        for index in 1...theEnd!{
+            answer *= index
+        }
+        return answer
+    } else {
+        return 0
     }
+}
     
 func averageCalc(_ nums: [String]) ->  Int{
     var average = 0;
@@ -45,15 +63,7 @@ func averageCalc(_ nums: [String]) ->  Int{
     
     
     
-public func calculate(_ arg: String) -> Int {
-    return calculate( arg.split(separator: " ").map({ substr in String(substr) }) )
+    public func calculate(_ arg: String) -> Int {
+        return calculate( arg.split(separator: " ").map({ substr in String(substr) }) )
+    }
 }
-
-//print("UW Calculator v1")
-//print("Enter an expression separated by returns:")
-//let first = readLine()!
-//let operation = readLine()!
-//let second = readLine()!
-//print(Calculator().calculate([first, operation, second]))
-//
-
