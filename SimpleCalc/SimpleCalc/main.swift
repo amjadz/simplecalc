@@ -1,4 +1,3 @@
-//
 //  main.swift
 //  SimpleCalc
 //
@@ -35,16 +34,15 @@ public class Calculator {
             case "*":
                 return firstNumber! * secondNumber!
             default:
-                return remainderCalc(firstNumber!, numberTwo: secondNumber!)
+                return remainderCalc(firstNumber!, secondNumber: secondNumber!)
             }
         }
-        return 0
     }
 
-    func remainderCalc(_ numberOne: Int, numberTwo: Int) -> Int {
-        var divsionRemainder = numberOne
-        let dividingNumber = numberTwo
-        
+    func remainderCalc(_ firstNumber: Int, secondNumber: Int) -> Int {
+        var divsionRemainder = firstNumber
+        let dividingNumber = secondNumber
+
         while divsionRemainder >= dividingNumber {
             divsionRemainder -= dividingNumber
         }
@@ -63,33 +61,18 @@ public class Calculator {
             return 0
         }
     }
-    
+
     func averageCalc(_ nums: [String]) ->  Int {
         var average = 0;
         let count = nums.count - 1
-        
+
         if count > 0 {
-            var negative = false
             for index in 0...nums.count - 2 {
-                if nums[index] == "-"{
-                    negative = true
-                    
-                } else {
-                    var nextNum = Int(nums[index])
-                    if negative {
-                        nextNum = nextNum! * 1
-                        negative = false
-                    }
-                    average += nextNum!
-                }
-                
-                return average / count
-                
+                let nextNum = Int(nums[index])
+                average += nextNum!
             }
-        } else {
-            return 0
         }
-       return 0
+        return average / count
     }
     
     public func calculate(_ arg: String) -> Int {
