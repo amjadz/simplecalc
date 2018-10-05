@@ -11,7 +11,7 @@ import Foundation
 public class Calculator {
     
     public func calculate(_ args: [String]) -> Int {
-        var allNums = args[args.count - 1]
+        let allNums = args[args.count - 1]
     
         switch allNums {
         case "count":
@@ -21,9 +21,9 @@ public class Calculator {
         case "fact":
             return factorialCalc(args)
         default:
-            var firstNumber = Int(args[0])
-            var secondNumber = Int(args[2])
-            var operatation = args[1]
+            let firstNumber = Int(args[0])
+            let secondNumber = Int(args[2])
+            let operatation = args[1]
         
             switch operatation{
             case "+":
@@ -43,7 +43,7 @@ public class Calculator {
 
     func remainderCalc(_ numberOne: Int, numberTwo: Int) -> Int {
         var divsionRemainder = numberOne
-        var dividingNumber = numberTwo
+        let dividingNumber = numberTwo
         
         while divsionRemainder >= dividingNumber {
             divsionRemainder -= dividingNumber
@@ -53,7 +53,7 @@ public class Calculator {
 
     func factorialCalc(_ nums: [String]) -> Int  {
         if nums.count == 2 {
-            var theEnd = Int(nums[0])
+            let theEnd = Int(nums[0])
             var answer = 1;
             for index in 1...theEnd!{
                 answer *= index
@@ -66,7 +66,7 @@ public class Calculator {
     
     func averageCalc(_ nums: [String]) ->  Int {
         var average = 0;
-        var count = nums.count - 1
+        let count = nums.count - 1
         
         if count > 0 {
             var negative = false
