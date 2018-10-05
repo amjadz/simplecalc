@@ -8,7 +8,6 @@
 import Foundation
 
 public class Calculator {
-    
     public func calculate(_ args: [String]) -> Int {
         let allNums = args[args.count - 1]
     
@@ -63,16 +62,17 @@ public class Calculator {
     }
 
     func averageCalc(_ nums: [String]) ->  Int {
-        var average = 0;
-        let count = nums.count - 1
-
-        if count > 0 {
-            for index in 0...nums.count - 2 {
-                let nextNum = Int(nums[index])
-                average += nextNum!
-            }
+        var count = 0
+        var sum: Int = 0
+        if nums.count == 1 {
+            return 0
         }
-        return average / count
+        while count < nums.count - 1 {
+            sum += Int(nums[count])!
+            count += 1
+        }
+        return sum / (nums.count - 1)
+        
     }
     
     public func calculate(_ arg: String) -> Int {
