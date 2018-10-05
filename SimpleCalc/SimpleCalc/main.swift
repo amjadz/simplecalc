@@ -63,7 +63,7 @@ public class Calculator {
 
     func averageCalc(_ nums: [String]) ->  Int {
         var count = 0
-        var sum: Int = 0
+        var sum = 0
         if nums.count == 1 {
             return 0
         }
